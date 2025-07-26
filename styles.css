@@ -167,13 +167,13 @@ html {
   }
   .myName h1 {
     margin: 0;
-    padding: 2rem;
+    padding: 1rem;
     padding-bottom: 0;
     font-size: 3.06rem;
   }
   .myName p {
     margin: 0;
-    padding: 1rem;
+    padding: 4rem;
     color: #94a3b8;
   }
   .social {
