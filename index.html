@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sangamlung</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="spotlight"></div>
+
+  <div class="main">
+    <div class="myName">
+
+      <div class="fixedSide">
+        <h1>Sangamlung</h1>
+        <p>Computer Science Engineering Student, Adaptable by nature, resilient by choice.</p>
+        <ul class="navigation">
+          <li>
+            <a href="#about" class="nav-link">
+              <span class="line"> </span> About
+            </a>
+          </li>
+          <li>
+            <a href="#education" class="nav-link"><span class="line"></span> Education</a>
+          </li>
+          <li>
+            <a href="" class="nav-link"><span class="line"></span> Projects</a>
+          </li>
+        </ul>
+        <ul class="social">
+          <li>
+            <a href="https://github.com/syberPawn"><img src="resources/github.png" alt="github"></a>
+          </li>
+          <li>
+            <a href="https://www.hackerrank.com/profile/s_gangmei170203"><img src="resources/hackerRank.png" alt="HackerRank"></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/sangamlung/"><img src="resources/linkedin.png" alt="LinkedIn"></a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="details">
+      <div id="about">
+        <h2>About</h2>
+        <p>
+          Hey there! Thank you for visitting. My name is ... and im a student of ... here's a little bit about myself
+          - I'm actively developing my skills in frontend development, with a goal to grow into a
+          well-rounded full-stack developer.</p>
+
+        <p>One of my key strengths is adaptability — I embrace change and new challenges as
+          opportunities to learn and improve. However, I believe in learning with intention.
+          I carefully choose opportunities that offer meaningful, hands-on growth rather than
+          rushing into everything that comes my way.
+          If I feel a task may exceed my current skill level without the right support for
+          learning, I choose to wait, study, and approach it better prepared.
+          For me, growth isn't about doing everything — it's about doing the right things,
+          mindfully and effectively.</p>
+
+        <p>I'm passionate about building clean, user-focused interfaces and am always open to
+          collaborative projects that allow me to apply what I know while learning something
+          new. I’m on a journey of becoming not just a developer, but a problem-solver who
+          values thoughtful design and purposeful coding.
+        </p>
+      </div>
+      <div id="education">
+
+        <section id="aku">
+          <h2>Education</h2>
+          <h3>The Assam Kaziranga University</h3>
+          <p class="educationTimeline">Expected graduation-2026</p>
+          <p>
+            Pursuing B.Tech in Computer Science Engineering at Assam Kaziranga University
+            (6th semester, graduating 2025) with a focus on frontend development and practical
+            learning through projects and core CS subjects.
+          </p>
+          <ul class="skills">
+            <li>
+              C++
+            </li>
+            <li>
+              DSA
+            </li>
+            <li>
+              WEB Tech
+            </li>
+
+
+          </ul>
+        </section>
+        <section class="iact">
+          <h3>Diploma in Professional Web Designing</h3>
+          <p class="educationTimeline">IACT Dimapur | 12 Months</p>
+          <p>
+            I completed a 12-month diploma in Professional Web Designing at IACT Dimapur,
+            where I gained hands-on experience with DHTML/CSS, Dreamweaver, HTML, JavaScript,
+            and Photoshop CS. This course strengthened my skills in creating visually appealing and
+            functional websites.
+          </p>
+          <ul class="skills">
+            <li>
+              CSS
+            </li>
+            <li>
+              HTML
+            </li>
+            <li>
+              JavaScript
+            </li>
+            <li>
+              Bootstrap
+            </li>
+            <li>
+              Adobe XD
+            </li>
+
+
+          </ul>
+        </section>
+        <section class="fatima">
+          <h3>Fatima School, Uttar Pradesh</h3>
+          <p class="educationTimeline">Class 9 to 12 | CBSE | PCM with Computer Science</p>
+          <p>
+            I completed my high school at Fatima Sr. Sec. School with a PCM stream and Computer
+            Science as an elective. It was during this time that I was introduced to Python
+            programming, which laid the foundation for my interest in technology and problem-
+            solving.
+          </p>
+          <ul class="skills">
+            <li>
+              PYTHON
+            </li>
+            <li>
+              MySQL
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    const spotlight = document.getElementById('spotlight');
+
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      spotlight.style.background = `radial-gradient(circle at ${x}px ${y}px, #111e42 0%, transparent 60%)`;
+    });
+
+    // SCROLLSPY
+    const sections = [
+      document.getElementById("about"),
+      document.getElementById("education")
+    ];
+
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    function updateActiveLink() {
+      let current = "";
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      // Default: if at top, keep About active
+      if (current === "") {
+        current = "about";
+      }
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    }
+
+    // Run on scroll
+    window.addEventListener("scroll", updateActiveLink);
+
+    // Run once on page load
+    updateActiveLink();
+  </script>
+
+
+
+
+</body>
+
+</html>

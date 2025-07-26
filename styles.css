@@ -1,0 +1,210 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  background-color: #0f172a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.main {
+  color: #e2e8f0;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+.fixedSide {
+  width: 30%;
+  position: fixed;
+}
+
+.myName {
+  width: 32%;
+  margin-top: 10vh;
+}
+.myName h1 {
+  margin: 0;
+  padding: 1.6rem;
+  padding-bottom: 0;
+  font-size: 4.06rem;
+}
+.myName p {
+  margin: 0;
+  padding: 1.9rem;
+  color: #94a3b8;
+}
+.myName ul {
+  list-style: none;
+  color: #94a3b8;
+}
+
+.line {
+  margin: 0 0.5rem 0.2rem;
+  display: inline-block;
+  width: 2rem;
+  height: 2px;
+  background: #94a3b8;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+/*NAVIGATION*/
+
+.nav-link {
+  text-decoration: none;
+  color: #94a3b8;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #e2e8f0;
+}
+
+.nav-link:hover .line {
+  width: 4rem;
+  background: #e2e8f0;
+}
+
+.nav-link.active {
+  color: #e2e8f0;
+}
+
+.nav-link.active .line {
+  width: 4rem;
+  background: #e2e8f0;
+}
+
+.navigation li {
+  margin: 1.3rem;
+}
+.social {
+  padding: 1.6rem;
+  display: flex;
+}
+.social li img {
+  width: 2.9rem;
+  padding: 1rem;
+  opacity: 50%;
+}
+.social li img:hover {
+  width: 2.9rem;
+  padding: 1rem;
+  opacity: 100%;
+}
+
+.social li {
+  padding: 0.625rem;
+}
+.details {
+  padding: 135px 0px 15px 45px;
+  width: 65%;
+  margin-left: 9.06rem;
+}
+.details p {
+  color: #94a3b8;
+}
+.details section h3 {
+  padding: 0;
+  margin: 0;
+}
+.details section h5 {
+  padding: 0;
+  margin: 0;
+}
+.educationTimeline {
+  margin: 0;
+  font-style: italic;
+}
+
+.details section {
+  padding: 1rem;
+}
+
+#about {
+  padding: 1rem;
+  margin-bottom: 15%;
+}
+#about h2 {
+  display: none;
+}
+#aku h2 {
+  display: none;
+}
+
+.skills {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  list-style: none;
+}
+.skills li {
+  border-radius: 1.9rem;
+  margin-right: 1rem;
+  padding: 2px 5px;
+  font-size: 11px;
+  color: #5eead4;
+  background-color: #122b39;
+  cursor: pointer;
+}
+#spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #141b2f 0%, transparent 60%);
+  z-index: 0; /* Keep it behind the content */
+}
+@media screen and (max-width: 1044px) {
+  .main {
+    display: block;
+  }
+  .fixedSide {
+    position: relative;
+    width: 100%;
+  }
+  .myName {
+    width: 100%;
+  }
+  .myName h1 {
+    margin: 0;
+    padding: 1rem;
+    padding-bottom: 0;
+    font-size: 3.06rem;
+  }
+  .myName p {
+    margin: 0;
+    padding: 1rem 0px 1rem 1rem;
+    color: #94a3b8;
+  }
+  .social {
+    margin: 0;
+    padding: 0;
+  }
+  .social li img {
+    width: 1.9rem;
+    padding: 0.5rem;
+    opacity: 50%;
+  }
+  .social li img:hover {
+    width: 1.9rem;
+    padding: 0.5rem;
+    opacity: 100%;
+  }
+  .line {
+    display: none;
+  }
+  .navigation {
+    display: none;
+  }
+  .details {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #aku h2 {
+    display: block;
+  }
+  #about h2 {
+    display: block;
+  }
+}
