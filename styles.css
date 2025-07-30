@@ -100,40 +100,38 @@ html {
   width: 65%;
   margin-left: 9.06rem;
 }
-.details p {
+.info-intro {
+  margin-bottom: 4.5rem;
+}
+.info-education {
+  margin-bottom: 4.5rem;
+}
+.info {
   color: #94a3b8;
+  padding: 1rem;
 }
-.details section h3 {
-  padding: 0;
-  margin: 0;
+.info h2 {
+  display: none;
 }
-.details section h5 {
-  padding: 0;
-  margin: 0;
+.info h3 {
+  margin: 0px;
 }
+.institute {
+  margin-top: 2.8rem;
+}
+.institute p {
+  margin: 0.2rem;
+}
+
 .educationTimeline {
-  margin: 0;
-  font-style: italic;
-}
-
-.details section {
-  padding: 1rem;
-}
-
-#about {
-  padding: 1rem;
-  margin-bottom: 15%;
-}
-#about h2 {
-  display: none;
-}
-#aku h2 {
-  display: none;
+  margin: 0px;
+  padding: 0px;
 }
 
 .skills {
   padding: 0px;
   margin: 0px;
+  margin-top: 1rem;
   display: flex;
   list-style: none;
 }
@@ -155,6 +153,7 @@ html {
   background: radial-gradient(circle at center, #141b2f 0%, transparent 60%);
   z-index: 0; /* Keep it behind the content */
 }
+
 @media screen and (max-width: 1044px) {
   .main {
     display: block;
@@ -202,10 +201,8 @@ html {
     margin: 0;
     padding: 0;
   }
-  #aku h2 {
+  .info h2 {
     display: block;
-  }
-  #about h2 {
-    display: block;
+    color: #e2e8f0;
   }
 }

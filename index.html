@@ -45,7 +45,7 @@
 
     </div>
     <div class="details">
-      <div id="about">
+      <div class="info info-intro" id="about">
         <h2>About</h2>
         <p>
           Hey there! Thank you for visitting. My name is ... and im a student of ... here's a little bit about myself
@@ -67,18 +67,19 @@
           values thoughtful design and purposeful coding.
         </p>
       </div>
-      <div id="education">
 
-        <section id="aku">
-          <h2>Education</h2>
+      <div class="info info-education" id="education">
+
+        <h2>Education</h2>
+        <div class="institute AKU">
           <h3>The Assam Kaziranga University</h3>
-          <p class="educationTimeline">Expected graduation-2026</p>
+          <p class="educationTimeline"><i>Expected graduation-2026</i></p>
           <p>
             Pursuing B.Tech in Computer Science Engineering at Assam Kaziranga University
             (6th semester, graduating 2025) with a focus on frontend development and practical
             learning through projects and core CS subjects.
           </p>
-          <ul class="skills">
+          <ul class="skills ">
             <li>
               C++
             </li>
@@ -88,13 +89,12 @@
             <li>
               WEB Tech
             </li>
-
-
           </ul>
-        </section>
-        <section class="iact">
+        </div>
+
+        <div class="institute IACT">
           <h3>Diploma in Professional Web Designing</h3>
-          <p class="educationTimeline">IACT Dimapur | 12 Months</p>
+          <label class="educationTimeline"><i>IACT Dimapur | 12 Months</i></label>
           <p>
             I completed a 12-month diploma in Professional Web Designing at IACT Dimapur,
             where I gained hands-on experience with DHTML/CSS, Dreamweaver, HTML, JavaScript,
@@ -120,10 +120,10 @@
 
 
           </ul>
-        </section>
-        <section class="fatima">
+        </div>
+        <div class="institute Fatima">
           <h3>Fatima School, Uttar Pradesh</h3>
-          <p class="educationTimeline">Class 9 to 12 | CBSE | PCM with Computer Science</p>
+          <label class="educationTimeline"><i>Class 9 to 12 | CBSE | PCM with Computer Science</i></label>
           <p>
             I completed my high school at Fatima Sr. Sec. School with a PCM stream and Computer
             Science as an elective. It was during this time that I was introduced to Python
@@ -138,60 +138,91 @@
               MySQL
             </li>
           </ul>
-        </section>
+        </div>
+      </div>
+
+
+      <div class="info info-projects" id="projects">
+        <h2>Projects</h2>
+        <div class="info-ecoGive">
+
+          <h3>EcoGive - <i>Ongoing</i></h3>
+          <p>
+            Developing an online platform that connects donors with local recycling centers and recipients
+            to facilitate item donations and promote responsible recycling. The project features user
+            registeration, donation listings, location-based matching, and real-time updates using Vue.js
+            and Firebase/MongoDB.
+          <ul class="skills">
+            <li>
+              Adobe XD
+            </li>
+            <li>
+              vue.js
+            </li>
+            <li>
+              MongoDB
+            </li>
+          </ul>
+          </p>
+
+        </div>
+
       </div>
     </div>
-
   </div>
-  <script>
-    const spotlight = document.getElementById('spotlight');
+</body>
 
-    document.addEventListener('mousemove', (e) => {
-      const x = e.clientX;
-      const y = e.clientY;
-      spotlight.style.background = `radial-gradient(circle at ${x}px ${y}px, #111e42 0%, transparent 60%)`;
+
+<script>
+  const spotlight = document.getElementById('spotlight');
+
+  document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    spotlight.style.background = `radial-gradient(circle at ${x}px ${y}px, #111e42 0%, transparent 60%)`;
+  });
+
+  // SCROLLSPY
+  const sections = [
+    document.getElementById("about"),
+    document.getElementById("education"),
+    document.getElementById("projects")
+  ];
+
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  function updateActiveLink() {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute("id");
+      }
     });
 
-    // SCROLLSPY
-    const sections = [
-      document.getElementById("about"),
-      document.getElementById("education")
-    ];
-
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    function updateActiveLink() {
-      let current = "";
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      // Default: if at top, keep About active
-      if (current === "") {
-        current = "about";
-      }
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
+    // Default: if at top, keep About active
+    if (current === "") {
+      current = "about";
     }
 
-    // Run on scroll
-    window.addEventListener("scroll", updateActiveLink);
+    navLinks.forEach(link => {
+      link.classList.remove("active");
 
-    // Run once on page load
-    updateActiveLink();
-  </script>
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  // Run on scroll
+  window.addEventListener("scroll", updateActiveLink);
+
+  // Run once on page load
+  updateActiveLink();
+</script>
 
 
 
